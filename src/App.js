@@ -1,0 +1,31 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { StyleSheet, Text, View } from 'react-native';
+
+import { showSettings } from './services/app/actions';
+
+class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text onPress={this.props.showSettings}>123</Text>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
+
+const mapDispatchToProps = {
+  showSettings,
+};
+
+export default connect(null, mapDispatchToProps)(App);
