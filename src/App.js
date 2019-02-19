@@ -1,14 +1,39 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {StyleSheet, View, Button} from 'react-native';
 
-import { showSettings } from './services/app/actions';
+import {initApp} from './services/app/actions';
 
 class App extends Component {
+  static propTypes = {
+    initApp: PropTypes.func.isRequired,
+  };
+
+  componentDidMount() {
+    this.props.initApp();
+  }
+
+  play = async () => {
+    const soundObject = new Expo.Audio.Sound();
+
+    try {
+      await soundObject.loadAsync(require('../assets/C1.mp3'));
+      await soundObject.playAsync();
+      // Your sound is playing!
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   render() {
     return (
       <View style={styles.container}>
-        <Text onPress={this.props.showSettings}>123</Text>
+        <Button
+          onPress={this.play}
+          title="Play"
+          color="#841584"
+        />
       </View>
     );
   }
@@ -25,7 +50,7 @@ const styles = StyleSheet.create({
 
 
 const mapDispatchToProps = {
-  showSettings,
+  initApp,
 };
 
 export default connect(null, mapDispatchToProps)(App);
