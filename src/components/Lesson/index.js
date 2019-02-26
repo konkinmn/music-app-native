@@ -22,6 +22,7 @@ class App extends Component {
 
   renderInterval = ({ id, name }) => (
     <ButtonWrapper
+      key={id}
       answer={this.getAnswer(id)}
       onPress={() => this.props.checkAnswer(id)}
       title={name}
@@ -48,6 +49,7 @@ class App extends Component {
 
   render() {
     const { intervals } = this.props;
+
     return (
       <View>
         <IntervalsContainer>
@@ -64,7 +66,6 @@ const mapStateToProps = ({ lessonService }) => ({
   intervals: lessonService.settings.intervals,
   isPlaying: lessonService.isPlaying,
 });
-
 
 const mapDispatchToProps = {
   checkAnswer,

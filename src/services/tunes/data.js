@@ -1,212 +1,134 @@
-const prefix = '/assets';
+const prefix = '/assets/tunes/';
 
 export const getTunesData = () => ({
   1: [
     {
       intervalId: 1,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 1,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   2: [
     {
       intervalId: 2,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 2,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   3: [
     {
       intervalId: 3,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 3,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   4: [
     {
       intervalId: 4,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 4,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   5: [
     {
       intervalId: 5,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 5,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   6: [
     {
       intervalId: 6,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 6,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   7: [
     {
       intervalId: 7,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 7,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   8: [
     {
       intervalId: 8,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 8,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   9: [
     {
       intervalId: 9,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 9,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   10: [
     {
       intervalId: 10,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 10,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   11: [
     {
       intervalId: 11,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 11,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   12: [
     {
       intervalId: 12,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 12,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
   13: [
     {
       intervalId: 13,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
     {
       intervalId: 13,
-      notes: [
-        { note: 'c1', sound: `${prefix}/C1.mp3` },
-        { note: 'a2', sound: `${prefix}/A2.mp3` },
-      ],
+      notes: ['c1', 'e1'],
     },
   ],
 });

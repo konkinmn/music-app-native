@@ -14,26 +14,42 @@ import {
   actionTypes,
 } from './actions';
 
-const play = () => new Promise(async (resolve) => {
-  const soundObjectA = new Expo.Audio.Sound();
-  let counter = 0;
+const sounds = {
+  c1: require('../../../assets/tunes/C1.mp3'),
+  e1: require('../../../assets/tunes/E1.mp3'),
+};
 
-  soundObjectA.setOnPlaybackStatusUpdate(({ shouldPlay, isPlaying }) => {
-    const isFinish = !(shouldPlay || isPlaying);
+function timeout(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-    if (isFinish) {
-      if (counter === 2) {
-        soundObjectA.unloadAsync();
-        return resolve();
-      }
-
-      return counter++;
-    }
-  });
-
+const play = notes => new Promise(async (resolve) => {
+  console.log(123);
+  await timeout(2000);
+  console.log(456);
+  // const soundObjectA = new Expo.Audio.Sound();
+  // const soundObjectB = new Expo.Audio.Sound();
+  // let counter = 0;
+  //
+  // soundObjectB.setOnPlaybackStatusUpdate(({ shouldPlay, isPlaying }) => {
+  //   const isFinish = !(shouldPlay || isPlaying);
+  //
+  //   if (isFinish) {
+  //     if (counter === 2) {
+  //       // soundObjectA.unloadAsync();
+  //       return resolve();
+  //     }
+  //
+  //     return counter++;
+  //   }
+  // });
+  //
   try {
-    await soundObjectA.loadAsync(require('../../../assets/C1.mp3'));
-    await soundObjectA.playAsync();
+  //   await soundObjectA.loadAsync(sounds[notes[0]]);
+  //   await soundObjectB.loadAsync(sounds[notes[1]]);
+  //   await soundObjectA.playAsync();
+  //   await timeout(200000);
+  //   await soundObjectB.playAsync();
   } catch (error) {
     console.log(error);
   }

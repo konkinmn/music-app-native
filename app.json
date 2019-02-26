@@ -5,7 +5,8 @@
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
