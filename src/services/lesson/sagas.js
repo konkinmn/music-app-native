@@ -11,49 +11,13 @@ import {
   setCorrectAnswer,
   setWrongAnswer,
   finishPlayTune,
+  clearAnswers,
+  setFinishLesson,
+  clearFinishLesson,
   actionTypes,
 } from './actions';
 
-const sounds = {
-  c1: require('../../../assets/tunes/C1.mp3'),
-  e1: require('../../../assets/tunes/E1.mp3'),
-};
-
-function timeout(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-const play = notes => new Promise(async (resolve) => {
-  console.log(123);
-  await timeout(2000);
-  console.log(456);
-  // const soundObjectA = new Expo.Audio.Sound();
-  // const soundObjectB = new Expo.Audio.Sound();
-  // let counter = 0;
-  //
-  // soundObjectB.setOnPlaybackStatusUpdate(({ shouldPlay, isPlaying }) => {
-  //   const isFinish = !(shouldPlay || isPlaying);
-  //
-  //   if (isFinish) {
-  //     if (counter === 2) {
-  //       // soundObjectA.unloadAsync();
-  //       return resolve();
-  //     }
-  //
-  //     return counter++;
-  //   }
-  // });
-  //
-  try {
-  //   await soundObjectA.loadAsync(sounds[notes[0]]);
-  //   await soundObjectB.loadAsync(sounds[notes[1]]);
-  //   await soundObjectA.playAsync();
-  //   await timeout(200000);
-  //   await soundObjectB.playAsync();
-  } catch (error) {
-    console.log(error);
-  }
-});
+import lessonPlay from './lessonPlay';
 
 const getTunes = (intervalsIds, length, tunes, lessonTunes) => {
   const shuffledIntervalsIds = shuffle(intervalsIds);
@@ -63,22 +27,24 @@ const getTunes = (intervalsIds, length, tunes, lessonTunes) => {
     lessonTunes.push(tune);
   });
 
+
   if (lessonTunes.length < length) {
     lessonTunes = getTunes(intervalsIds, length, tunes, lessonTunes);
   }
 
-  return lessonTunes;
+  return lessonTunes.splice(0, length);
 };
 
 function* initLessonSaga() {
   try {
     const intervals = yield select(({ intervalsService }) => intervalsService.intervals);
+    yield put(clearAnswers());
+    yield put(clearFinishLesson());
     yield put(updateSettings({ intervals }));
     yield put(getLessonTunes());
     yield put(getActiveTune());
 
     yield take(actionTypes.UPDATE_ACTIVE_TUNE);
-
     yield put(initLessonSuccess());
   } catch (error) {
     console.log(error);
@@ -104,6 +70,8 @@ function* getActiveTuneSaga() {
       const [activeTune, ...restTunes] = tunes;
       yield put(updateLessonTunes(restTunes));
       yield put(updateActiveTune(activeTune));
+    } else {
+      yield put(setFinishLesson());
     }
   } catch (error) {
     console.log(error);
@@ -126,7 +94,8 @@ function* checkAnswerSaga({ intervalId }) {
 function* playTuneSaga() {
   try {
     const activeTune = yield select(({ lessonService }) => lessonService.activeTune);
-    yield call(play, activeTune.notes);
+    const { playback } = yield select(({ lessonService }) => lessonService.settings);
+    yield call(lessonPlay, activeTune.notes, playback);
     yield put(finishPlayTune());
   } catch (error) {
     console.log(error);

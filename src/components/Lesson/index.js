@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View, Button } from 'react-native';
+import { View, Button, Picker, Text } from 'react-native';
 
-import { IntervalsContainer, ButtonWrapper, ButtonText } from './styles';
+import {
+  IntervalsContainer,
+  ButtonWrapper,
+  ButtonText,
+  CompletedLessonContainer,
+} from './styles';
 
-import { checkAnswer, getActiveTune, playTune } from '../../services/lesson/actions';
+import { checkAnswer, getActiveTune, playTune, updateSettings, initLesson } from '../../services/lesson/actions';
+import { playbackTypes } from '../../services/lesson/constants';
 
 
 class App extends Component {
@@ -47,8 +53,31 @@ class App extends Component {
     return <Button onPress={getActiveTune} title="Next" />;
   };
 
+  renderPicker = () => (
+    <Picker
+      selectedValue={this.props.playback}
+      style={{ height: 50, width: '100%' }}
+      onValueChange={(itemValue, itemIndex) => this.props.updateSettings({ playback: itemValue })}
+    >
+      <Picker.Item value={playbackTypes.UP} label="Вверх" />
+      <Picker.Item value={playbackTypes.DOWN} label="Вниз" />
+    </Picker>
+  );
+
   render() {
-    const { intervals } = this.props;
+    const {
+      intervals, finishLesson, answers, initLesson,
+    } = this.props;
+
+    if (finishLesson) {
+      return (
+        <CompletedLessonContainer>
+          <Text>Правильно: {answers.correct}</Text>
+          <Text>Не правильно: {answers.wrong}</Text>
+          <Button onPress={initLesson} title="Еще раз" />
+        </CompletedLessonContainer>
+      );
+    }
 
     return (
       <View>
@@ -56,6 +85,7 @@ class App extends Component {
           {intervals.map(this.renderInterval)}
         </IntervalsContainer>
         {this.renderOptions()}
+        {this.renderPicker()}
       </View>
     );
   }
@@ -64,13 +94,18 @@ class App extends Component {
 const mapStateToProps = ({ lessonService }) => ({
   activeTune: lessonService.activeTune,
   intervals: lessonService.settings.intervals,
+  answers: lessonService.answers,
   isPlaying: lessonService.isPlaying,
+  finishLesson: lessonService.finishLesson,
+  playback: lessonService.settings.playback,
 });
 
 const mapDispatchToProps = {
   checkAnswer,
   getActiveTune,
   playTune,
+  updateSettings,
+  initLesson,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

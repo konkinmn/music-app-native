@@ -10,8 +10,11 @@ export const actionTypes = {
   GET_ACTIVE_TUNE: 'GET_ACTIVE_TUNE',
   UPDATE_ACTIVE_TUNE: 'UPDATE_ACTIVE_TUNE',
   CHECK_ANSWER: 'CHECK_ANSWER',
+  CLEAR_ANSWERS: 'CLEAR_ANSWERS',
   PLAY_TUNE: 'PLAY_TUNE',
   FINISH_PLAY_TUNE: 'FINISH_PLAY_TUNE',
+  SET_FINISH_LESSON: 'SET_FINISH_LESSON',
+  CLEAR_FINISH_LESSON: 'CLEAR_FINISH_LESSON',
 };
 
 export const initLesson = () => ({ type: actionTypes.INIT_LESSON });
@@ -41,4 +44,10 @@ export const setCorrectAnswer = answerId => ({ type: actionTypes.SET_CORRECT_ANS
 export const setWrongAnswer = answerId => ({ type: actionTypes.SET_WRONG_ANSWER, answerId });
 
 export const setCorrectWithTipAnswer = answerId => ({ type: actionTypes.SET_CORRECT_WITH_TIP_ANSWER, answerId });
+
+export const clearAnswers = () => ({ type: actionTypes.CLEAR_ANSWERS });
+
+export const setFinishLesson = () => ({ type: actionTypes.SET_FINISH_LESSON });
+
+export const clearFinishLesson = () => ({ type: actionTypes.CLEAR_FINISH_LESSON });
 
