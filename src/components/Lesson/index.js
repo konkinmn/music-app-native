@@ -26,11 +26,18 @@ class App extends Component {
     return intervalId === answerId;
   };
 
+  handlePressInterval = (id) => {
+    const { answerId, intervalId } = this.props.activeTune;
+    if (!answerId) {
+      this.props.checkAnswer(id);
+    }
+  };
+
   renderInterval = ({ id, name }) => (
     <ButtonWrapper
       key={id}
       answer={this.getAnswer(id)}
-      onPress={() => this.props.checkAnswer(id)}
+      onPress={() => this.handlePressInterval(id)}
       title={name}
     >
       <ButtonText>{name}</ButtonText>
@@ -57,7 +64,7 @@ class App extends Component {
     <Picker
       selectedValue={this.props.playback}
       style={{ height: 50, width: '100%' }}
-      onValueChange={(itemValue, itemIndex) => this.props.updateSettings({ playback: itemValue })}
+      onValueChange={itemValue => this.props.updateSettings({ playback: itemValue })}
     >
       <Picker.Item value={playbackTypes.UP} label="Вверх" />
       <Picker.Item value={playbackTypes.DOWN} label="Вниз" />
