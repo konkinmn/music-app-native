@@ -102,71 +102,71 @@ export const getTunesData = () => (
       {
         intervalId: 1,
         notes: [
-          'Dflat1',
-          'Dflat1',
+          'Db1',
+          'Db1',
         ],
       },
       {
         intervalId: 1,
         notes: [
-          'Dflat2',
-          'Dflat2',
+          'Db2',
+          'Db2',
         ],
       },
       {
         intervalId: 1,
         notes: [
-          'Eflat1',
-          'Eflat1',
+          'Eb1',
+          'Eb1',
         ],
       },
       {
         intervalId: 1,
         notes: [
-          'Eflat2',
-          'Eflat2',
+          'Eb2',
+          'Eb2',
         ],
       },
       {
         intervalId: 1,
         notes: [
-          'Gflat1',
-          'Gflat1',
+          'Gb1',
+          'Gb1',
         ],
       },
       {
         intervalId: 1,
         notes: [
-          'Gflat2',
-          'Gflat2',
+          'Gb2',
+          'Gb2',
         ],
       },
       {
         intervalId: 1,
         notes: [
-          'Aflat1',
-          'Aflat1',
+          'Ab1',
+          'Ab1',
         ],
       },
       {
         intervalId: 1,
         notes: [
-          'Aflat2',
-          'Aflat2',
+          'Ab2',
+          'Ab2',
         ],
       },
       {
         intervalId: 1,
         notes: [
-          'Bflat1',
-          'Bflat1',
+          'Bb1',
+          'Bb1',
         ],
       },
       {
         intervalId: 1,
         notes: [
-          'Bflat2',
-          'Bflat2',
+          'Bb2',
+          'Bb2',
         ],
       },
     ],
@@ -175,7 +175,7 @@ export const getTunesData = () => (
         intervalId: 2,
         notes: [
           'C1',
-          'Dflat1',
+          'Db1',
         ],
       },
       {
@@ -189,14 +189,14 @@ export const getTunesData = () => (
         intervalId: 2,
         notes: [
           'D1',
-          'Eflat1',
+          'Eb1',
         ],
       },
       {
         intervalId: 2,
         notes: [
           'D2',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
@@ -210,14 +210,14 @@ export const getTunesData = () => (
         intervalId: 2,
         notes: [
           'E2',
-          'Eflat2',
+          'Eb2',
         ],
       },
       {
         intervalId: 2,
         notes: [
           'F1',
-          'Gflat1',
+          'Gb1',
         ],
       },
       {
@@ -231,28 +231,28 @@ export const getTunesData = () => (
         intervalId: 2,
         notes: [
           'G1',
-          'Aflat1',
+          'Ab1',
         ],
       },
       {
         intervalId: 2,
         notes: [
           'G2',
-          'Gflat2',
+          'Gb2',
         ],
       },
       {
         intervalId: 2,
         notes: [
           'A1',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
         intervalId: 2,
         notes: [
           'A2',
-          'Aflat2',
+          'Ab2',
         ],
       },
       {
@@ -266,76 +266,76 @@ export const getTunesData = () => (
         intervalId: 2,
         notes: [
           'B2',
-          'Bflat2',
+          'Bb2',
         ],
       },
       {
         intervalId: 2,
         notes: [
-          'Dflat1',
+          'Db1',
           'D1',
         ],
       },
       {
         intervalId: 2,
         notes: [
-          'Dflat2',
+          'Db2',
           'C2',
         ],
       },
       {
         intervalId: 2,
         notes: [
-          'Eflat1',
+          'Eb1',
           'E1',
         ],
       },
       {
         intervalId: 2,
         notes: [
-          'Eflat2',
+          'Eb2',
           'D2',
         ],
       },
       {
         intervalId: 2,
         notes: [
-          'Gflat1',
+          'Gb1',
           'G1',
         ],
       },
       {
         intervalId: 2,
         notes: [
-          'Gflat2',
+          'Gb2',
           'F2',
         ],
       },
       {
         intervalId: 2,
         notes: [
-          'Aflat1',
+          'Ab1',
           'A1',
         ],
       },
       {
         intervalId: 2,
         notes: [
-          'Aflat2',
+          'Ab2',
           'G2',
         ],
       },
       {
         intervalId: 2,
         notes: [
-          'Bflat1',
+          'Bb1',
           'B1',
         ],
       },
       {
         intervalId: 2,
         notes: [
-          'Bflat2',
+          'Bb2',
           'A2',
         ],
       },
@@ -352,7 +352,7 @@ export const getTunesData = () => (
         intervalId: 3,
         notes: [
           'C2',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
@@ -373,7 +373,7 @@ export const getTunesData = () => (
         intervalId: 3,
         notes: [
           'E1',
-          'Gflat1',
+          'Gb1',
         ],
       },
       {
@@ -394,7 +394,7 @@ export const getTunesData = () => (
         intervalId: 3,
         notes: [
           'F2',
-          'Eflat2',
+          'Eb2',
         ],
       },
       {
@@ -429,7 +429,7 @@ export const getTunesData = () => (
         intervalId: 3,
         notes: [
           'B1',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
@@ -442,71 +442,71 @@ export const getTunesData = () => (
       {
         intervalId: 3,
         notes: [
-          'Dflat1',
-          'Eflat1',
+          'Db1',
+          'Eb1',
         ],
       },
       {
         intervalId: 3,
         notes: [
-          'Dflat2',
+          'Db2',
           'B1',
         ],
       },
       {
         intervalId: 3,
         notes: [
-          'Eflat1',
+          'Eb1',
           'F1',
         ],
       },
       {
         intervalId: 3,
         notes: [
-          'Eflat2',
-          'Dflat2',
+          'Eb2',
+          'Db2',
         ],
       },
       {
         intervalId: 3,
         notes: [
-          'Gflat1',
-          'Aflat1',
+          'Gb1',
+          'Ab1',
         ],
       },
       {
         intervalId: 3,
         notes: [
-          'Gflat2',
+          'Gb2',
           'E2',
         ],
       },
       {
         intervalId: 3,
         notes: [
-          'Aflat1',
-          'Bflat1',
+          'Ab1',
+          'Bb1',
         ],
       },
       {
         intervalId: 3,
         notes: [
-          'Aflat2',
-          'Gflat2',
+          'Ab2',
+          'Gb2',
         ],
       },
       {
         intervalId: 3,
         notes: [
-          'Bflat1',
+          'Bb1',
           'C2',
         ],
       },
       {
         intervalId: 3,
         notes: [
-          'Bflat2',
-          'Aflat2',
+          'Bb2',
+          'Ab2',
         ],
       },
     ],
@@ -515,7 +515,7 @@ export const getTunesData = () => (
         intervalId: 4,
         notes: [
           'C1',
-          'Eflat1',
+          'Eb1',
         ],
       },
       {
@@ -550,14 +550,14 @@ export const getTunesData = () => (
         intervalId: 4,
         notes: [
           'E2',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
         intervalId: 4,
         notes: [
           'F1',
-          'Aflat1',
+          'Ab1',
         ],
       },
       {
@@ -571,7 +571,7 @@ export const getTunesData = () => (
         intervalId: 4,
         notes: [
           'G1',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
@@ -592,7 +592,7 @@ export const getTunesData = () => (
         intervalId: 4,
         notes: [
           'A2',
-          'Gflat2',
+          'Gb2',
         ],
       },
       {
@@ -606,76 +606,76 @@ export const getTunesData = () => (
         intervalId: 4,
         notes: [
           'B2',
-          'Aflat2',
+          'Ab2',
         ],
       },
       {
         intervalId: 4,
         notes: [
-          'Dflat1',
+          'Db1',
           'E1',
         ],
       },
       {
         intervalId: 4,
         notes: [
-          'Dflat2',
-          'Bflat1',
+          'Db2',
+          'Bb1',
         ],
       },
       {
         intervalId: 4,
         notes: [
-          'Eflat1',
-          'Gflat1',
+          'Eb1',
+          'Gb1',
         ],
       },
       {
         intervalId: 4,
         notes: [
-          'Eflat2',
+          'Eb2',
           'C2',
         ],
       },
       {
         intervalId: 4,
         notes: [
-          'Gflat1',
+          'Gb1',
           'A1',
         ],
       },
       {
         intervalId: 4,
         notes: [
-          'Gflat2',
-          'Eflat2',
+          'Gb2',
+          'Eb2',
         ],
       },
       {
         intervalId: 4,
         notes: [
-          'Aflat1',
+          'Ab1',
           'B1',
         ],
       },
       {
         intervalId: 4,
         notes: [
-          'Aflat2',
+          'Ab2',
           'F2',
         ],
       },
       {
         intervalId: 4,
         notes: [
-          'Bflat1',
-          'Dflat2',
+          'Bb1',
+          'Db2',
         ],
       },
       {
         intervalId: 4,
         notes: [
-          'Bflat2',
+          'Bb2',
           'G2',
         ],
       },
@@ -692,28 +692,28 @@ export const getTunesData = () => (
         intervalId: 5,
         notes: [
           'C2',
-          'Aflat1',
+          'Ab1',
         ],
       },
       {
         intervalId: 5,
         notes: [
           'D1',
-          'Gflat1',
+          'Gb1',
         ],
       },
       {
         intervalId: 5,
         notes: [
           'D2',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
         intervalId: 5,
         notes: [
           'E1',
-          'Aflat1',
+          'Ab1',
         ],
       },
       {
@@ -734,7 +734,7 @@ export const getTunesData = () => (
         intervalId: 5,
         notes: [
           'F2',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
@@ -748,14 +748,14 @@ export const getTunesData = () => (
         intervalId: 5,
         notes: [
           'G2',
-          'Eflat2',
+          'Eb2',
         ],
       },
       {
         intervalId: 5,
         notes: [
           'A1',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
@@ -769,7 +769,7 @@ export const getTunesData = () => (
         intervalId: 5,
         notes: [
           'B1',
-          'Eflat2',
+          'Eb2',
         ],
       },
       {
@@ -782,71 +782,71 @@ export const getTunesData = () => (
       {
         intervalId: 5,
         notes: [
-          'Dflat1',
+          'Db1',
           'F1',
         ],
       },
       {
         intervalId: 5,
         notes: [
-          'Dflat2',
+          'Db2',
           'A1',
         ],
       },
       {
         intervalId: 5,
         notes: [
-          'Eflat1',
+          'Eb1',
           'G1',
         ],
       },
       {
         intervalId: 5,
         notes: [
-          'Eflat2',
+          'Eb2',
           'B1',
         ],
       },
       {
         intervalId: 5,
         notes: [
-          'Gflat1',
-          'Bflat1',
+          'Gb1',
+          'Bb1',
         ],
       },
       {
         intervalId: 5,
         notes: [
-          'Gflat2',
+          'Gb2',
           'D2',
         ],
       },
       {
         intervalId: 5,
         notes: [
-          'Aflat1',
+          'Ab1',
           'C2',
         ],
       },
       {
         intervalId: 5,
         notes: [
-          'Aflat2',
+          'Ab2',
           'E2',
         ],
       },
       {
         intervalId: 5,
         notes: [
-          'Bflat1',
+          'Bb1',
           'D2',
         ],
       },
       {
         intervalId: 5,
         notes: [
-          'Bflat2',
-          'Gflat2',
+          'Bb2',
+          'Gb2',
         ],
       },
     ],
@@ -897,7 +897,7 @@ export const getTunesData = () => (
         intervalId: 6,
         notes: [
           'F1',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
@@ -946,76 +946,76 @@ export const getTunesData = () => (
         intervalId: 6,
         notes: [
           'B2',
-          'Gflat2',
+          'Gb2',
         ],
       },
       {
         intervalId: 6,
         notes: [
-          'Dflat1',
-          'Gflat1',
+          'Db1',
+          'Gb1',
         ],
       },
       {
         intervalId: 6,
         notes: [
-          'Dflat2',
-          'Aflat1',
+          'Db2',
+          'Ab1',
         ],
       },
       {
         intervalId: 6,
         notes: [
-          'Eflat1',
-          'Aflat1',
+          'Eb1',
+          'Ab1',
         ],
       },
       {
         intervalId: 6,
         notes: [
-          'Eflat2',
-          'Bflat1',
+          'Eb2',
+          'Bb1',
         ],
       },
       {
         intervalId: 6,
         notes: [
-          'Gflat1',
+          'Gb1',
           'B1',
         ],
       },
       {
         intervalId: 6,
         notes: [
-          'Gflat2',
+          'Gb2',
           'Dfalt2',
         ],
       },
       {
         intervalId: 6,
         notes: [
-          'Aflat1',
-          'Dflat2',
+          'Ab1',
+          'Db2',
         ],
       },
       {
         intervalId: 6,
         notes: [
-          'Aflat2',
-          'Eflat2',
+          'Ab2',
+          'Eb2',
         ],
       },
       {
         intervalId: 6,
         notes: [
-          'Bflat1',
-          'Eflat2',
+          'Bb1',
+          'Eb2',
         ],
       },
       {
         intervalId: 6,
         notes: [
-          'Bflat2',
+          'Bb2',
           'F2',
         ],
       },
@@ -1025,42 +1025,42 @@ export const getTunesData = () => (
         intervalId: 7,
         notes: [
           'C1',
-          'Gflat1',
+          'Gb1',
         ],
       },
       {
         intervalId: 7,
         notes: [
           'C2',
-          'Gflat1',
+          'Gb1',
         ],
       },
       {
         intervalId: 7,
         notes: [
           'D1',
-          'Aflat1',
+          'Ab1',
         ],
       },
       {
         intervalId: 7,
         notes: [
           'D2',
-          'Aflat1',
+          'Ab1',
         ],
       },
       {
         intervalId: 7,
         notes: [
           'E1',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
         intervalId: 7,
         notes: [
           'E2',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
@@ -1081,28 +1081,28 @@ export const getTunesData = () => (
         intervalId: 7,
         notes: [
           'G1',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
         intervalId: 7,
         notes: [
           'G2',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
         intervalId: 7,
         notes: [
           'A1',
-          'Eflat2',
+          'Eb2',
         ],
       },
       {
         intervalId: 7,
         notes: [
           'A2',
-          'Eflat2',
+          'Eb2',
         ],
       },
       {
@@ -1122,70 +1122,70 @@ export const getTunesData = () => (
       {
         intervalId: 7,
         notes: [
-          'Dflat1',
+          'Db1',
           'G1',
         ],
       },
       {
         intervalId: 7,
         notes: [
-          'Dflat2',
+          'Db2',
           'G1',
         ],
       },
       {
         intervalId: 7,
         notes: [
-          'Eflat1',
+          'Eb1',
           'A1',
         ],
       },
       {
         intervalId: 7,
         notes: [
-          'Eflat2',
+          'Eb2',
           'A1',
         ],
       },
       {
         intervalId: 7,
         notes: [
-          'Gflat1',
+          'Gb1',
           'C2',
         ],
       },
       {
         intervalId: 7,
         notes: [
-          'Gflat2',
+          'Gb2',
           'C2',
         ],
       },
       {
         intervalId: 7,
         notes: [
-          'Aflat1',
+          'Ab1',
           'D2',
         ],
       },
       {
         intervalId: 7,
         notes: [
-          'Aflat2',
+          'Ab2',
           'D2',
         ],
       },
       {
         intervalId: 7,
         notes: [
-          'Bflat1',
+          'Bb1',
           'E2',
         ],
       },
       {
         intervalId: 7,
         notes: [
-          'Bflat2',
+          'Bb2',
           'E2',
         ],
       },
@@ -1244,7 +1244,7 @@ export const getTunesData = () => (
         intervalId: 8,
         notes: [
           'F2',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
@@ -1279,7 +1279,7 @@ export const getTunesData = () => (
         intervalId: 8,
         notes: [
           'B1',
-          'Gflat2',
+          'Gb2',
         ],
       },
       {
@@ -1292,71 +1292,71 @@ export const getTunesData = () => (
       {
         intervalId: 8,
         notes: [
-          'Dflat1',
-          'Aflat1',
+          'Db1',
+          'Ab1',
         ],
       },
       {
         intervalId: 8,
         notes: [
-          'Dflat2',
-          'Gflat1',
+          'Db2',
+          'Gb1',
         ],
       },
       {
         intervalId: 8,
         notes: [
-          'Eflat1',
-          'Bflat1',
+          'Eb1',
+          'Bb1',
         ],
       },
       {
         intervalId: 8,
         notes: [
-          'Eflat2',
-          'Aflat1',
+          'Eb2',
+          'Ab1',
         ],
       },
       {
         intervalId: 8,
         notes: [
-          'Gflat1',
+          'Gb1',
           'Dfalt2',
         ],
       },
       {
         intervalId: 8,
         notes: [
-          'Gflat2',
+          'Gb2',
           'B1',
         ],
       },
       {
         intervalId: 8,
         notes: [
-          'Aflat1',
-          'Eflat2',
+          'Ab1',
+          'Eb2',
         ],
       },
       {
         intervalId: 8,
         notes: [
-          'Aflat2',
-          'Dflat2',
+          'Ab2',
+          'Db2',
         ],
       },
       {
         intervalId: 8,
         notes: [
-          'Bflat1',
+          'Bb1',
           'F2',
         ],
       },
       {
         intervalId: 8,
         notes: [
-          'Bflat2',
-          'Eflat2',
+          'Bb2',
+          'Eb2',
         ],
       },
     ],
@@ -1365,7 +1365,7 @@ export const getTunesData = () => (
         intervalId: 9,
         notes: [
           'C1',
-          'Aflat1',
+          'Ab1',
         ],
       },
       {
@@ -1379,14 +1379,14 @@ export const getTunesData = () => (
         intervalId: 9,
         notes: [
           'D1',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
         intervalId: 9,
         notes: [
           'D2',
-          'Gflat1',
+          'Gb1',
         ],
       },
       {
@@ -1400,14 +1400,14 @@ export const getTunesData = () => (
         intervalId: 9,
         notes: [
           'E2',
-          'Aflat1',
+          'Ab1',
         ],
       },
       {
         intervalId: 9,
         notes: [
           'F1',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
@@ -1421,7 +1421,7 @@ export const getTunesData = () => (
         intervalId: 9,
         notes: [
           'G1',
-          'Eflat2',
+          'Eb2',
         ],
       },
       {
@@ -1442,7 +1442,7 @@ export const getTunesData = () => (
         intervalId: 9,
         notes: [
           'A2',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
@@ -1456,76 +1456,76 @@ export const getTunesData = () => (
         intervalId: 9,
         notes: [
           'B2',
-          'Eflat2',
+          'Eb2',
         ],
       },
       {
         intervalId: 9,
         notes: [
-          'Dflat1',
+          'Db1',
           'A1',
         ],
       },
       {
         intervalId: 9,
         notes: [
-          'Dflat2',
+          'Db2',
           'F1',
         ],
       },
       {
         intervalId: 9,
         notes: [
-          'Eflat1',
+          'Eb1',
           'B1',
         ],
       },
       {
         intervalId: 9,
         notes: [
-          'Eflat2',
+          'Eb2',
           'G1',
         ],
       },
       {
         intervalId: 9,
         notes: [
-          'Gflat1',
+          'Gb1',
           'D2',
         ],
       },
       {
         intervalId: 9,
         notes: [
-          'Gflat2',
-          'Bflat1',
+          'Gb2',
+          'Bb1',
         ],
       },
       {
         intervalId: 9,
         notes: [
-          'Aflat1',
+          'Ab1',
           'E2',
         ],
       },
       {
         intervalId: 9,
         notes: [
-          'Aflat2',
+          'Ab2',
           'C2',
         ],
       },
       {
         intervalId: 9,
         notes: [
-          'Bflat1',
-          'Gflat2',
+          'Bb1',
+          'Gb2',
         ],
       },
       {
         intervalId: 9,
         notes: [
-          'Bflat2',
+          'Bb2',
           'D2',
         ],
       },
@@ -1542,7 +1542,7 @@ export const getTunesData = () => (
         intervalId: 10,
         notes: [
           'C2',
-          'Eflat1',
+          'Eb1',
         ],
       },
       {
@@ -1563,7 +1563,7 @@ export const getTunesData = () => (
         intervalId: 10,
         notes: [
           'E1',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
@@ -1584,7 +1584,7 @@ export const getTunesData = () => (
         intervalId: 10,
         notes: [
           'F2',
-          'Aflat1',
+          'Ab1',
         ],
       },
       {
@@ -1598,14 +1598,14 @@ export const getTunesData = () => (
         intervalId: 10,
         notes: [
           'G2',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
         intervalId: 10,
         notes: [
           'A1',
-          'Gflat2',
+          'Gb2',
         ],
       },
       {
@@ -1619,7 +1619,7 @@ export const getTunesData = () => (
         intervalId: 10,
         notes: [
           'B1',
-          'Aflat2',
+          'Ab2',
         ],
       },
       {
@@ -1632,71 +1632,71 @@ export const getTunesData = () => (
       {
         intervalId: 10,
         notes: [
-          'Dflat1',
-          'Bflat1',
+          'Db1',
+          'Bb1',
         ],
       },
       {
         intervalId: 10,
         notes: [
-          'Dflat2',
+          'Db2',
           'E1',
         ],
       },
       {
         intervalId: 10,
         notes: [
-          'Eflat1',
+          'Eb1',
           'C2',
         ],
       },
       {
         intervalId: 10,
         notes: [
-          'Eflat2',
-          'Gflat1',
+          'Eb2',
+          'Gb1',
         ],
       },
       {
         intervalId: 10,
         notes: [
-          'Gflat1',
-          'Eflat2',
+          'Gb1',
+          'Eb2',
         ],
       },
       {
         intervalId: 10,
         notes: [
-          'Gflat2',
+          'Gb2',
           'A1',
         ],
       },
       {
         intervalId: 10,
         notes: [
-          'Aflat1',
+          'Ab1',
           'F2',
         ],
       },
       {
         intervalId: 10,
         notes: [
-          'Aflat2',
+          'Ab2',
           'B1',
         ],
       },
       {
         intervalId: 10,
         notes: [
-          'Bflat1',
+          'Bb1',
           'G2',
         ],
       },
       {
         intervalId: 10,
         notes: [
-          'Bflat2',
-          'Dflat2',
+          'Bb2',
+          'Db2',
         ],
       },
     ],
@@ -1705,7 +1705,7 @@ export const getTunesData = () => (
         intervalId: 11,
         notes: [
           'C1',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
@@ -1740,14 +1740,14 @@ export const getTunesData = () => (
         intervalId: 11,
         notes: [
           'E2',
-          'Gflat1',
+          'Gb1',
         ],
       },
       {
         intervalId: 11,
         notes: [
           'F1',
-          'Eflat2',
+          'Eb2',
         ],
       },
       {
@@ -1796,76 +1796,76 @@ export const getTunesData = () => (
         intervalId: 11,
         notes: [
           'B2',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
         intervalId: 11,
         notes: [
-          'Dflat1',
+          'Db1',
           'B1',
         ],
       },
       {
         intervalId: 11,
         notes: [
-          'Dflat2',
-          'Eflat1',
+          'Db2',
+          'Eb1',
         ],
       },
       {
         intervalId: 11,
         notes: [
-          'Eflat1',
-          'Dflat2',
+          'Eb1',
+          'Db2',
         ],
       },
       {
         intervalId: 11,
         notes: [
-          'Eflat2',
+          'Eb2',
           'F1',
         ],
       },
       {
         intervalId: 11,
         notes: [
-          'Gflat1',
+          'Gb1',
           'E2',
         ],
       },
       {
         intervalId: 11,
         notes: [
-          'Gflat2',
-          'Aflat1',
+          'Gb2',
+          'Ab1',
         ],
       },
       {
         intervalId: 11,
         notes: [
-          'Aflat1',
-          'Gflat2',
+          'Ab1',
+          'Gb2',
         ],
       },
       {
         intervalId: 11,
         notes: [
-          'Aflat2',
-          'Bflat1',
+          'Ab2',
+          'Bb1',
         ],
       },
       {
         intervalId: 11,
         notes: [
-          'Bflat1',
-          'Aflat2',
+          'Bb1',
+          'Ab2',
         ],
       },
       {
         intervalId: 11,
         notes: [
-          'Bflat2',
+          'Bb2',
           'C2',
         ],
       },
@@ -1882,28 +1882,28 @@ export const getTunesData = () => (
         intervalId: 12,
         notes: [
           'C2',
-          'Dflat1',
+          'Db1',
         ],
       },
       {
         intervalId: 12,
         notes: [
           'D1',
-          'Dflat2',
+          'Db2',
         ],
       },
       {
         intervalId: 12,
         notes: [
           'D2',
-          'Eflat1',
+          'Eb1',
         ],
       },
       {
         intervalId: 12,
         notes: [
           'E1',
-          'Eflat2',
+          'Eb2',
         ],
       },
       {
@@ -1924,42 +1924,42 @@ export const getTunesData = () => (
         intervalId: 12,
         notes: [
           'F2',
-          'Gflat1',
+          'Gb1',
         ],
       },
       {
         intervalId: 12,
         notes: [
           'G1',
-          'Gflat2',
+          'Gb2',
         ],
       },
       {
         intervalId: 12,
         notes: [
           'G2',
-          'Aflat1',
+          'Ab1',
         ],
       },
       {
         intervalId: 12,
         notes: [
           'A1',
-          'Aflat2',
+          'Ab2',
         ],
       },
       {
         intervalId: 12,
         notes: [
           'A2',
-          'Bflat1',
+          'Bb1',
         ],
       },
       {
         intervalId: 12,
         notes: [
           'B1',
-          'Bflat2',
+          'Bb2',
         ],
       },
       {
@@ -1972,70 +1972,70 @@ export const getTunesData = () => (
       {
         intervalId: 12,
         notes: [
-          'Dflat1',
+          'Db1',
           'C2',
         ],
       },
       {
         intervalId: 12,
         notes: [
-          'Dflat2',
+          'Db2',
           'D1',
         ],
       },
       {
         intervalId: 12,
         notes: [
-          'Eflat1',
+          'Eb1',
           'D2',
         ],
       },
       {
         intervalId: 12,
         notes: [
-          'Eflat2',
+          'Eb2',
           'E1',
         ],
       },
       {
         intervalId: 12,
         notes: [
-          'Gflat1',
+          'Gb1',
           'F2',
         ],
       },
       {
         intervalId: 12,
         notes: [
-          'Gflat2',
+          'Gb2',
           'G1',
         ],
       },
       {
         intervalId: 12,
         notes: [
-          'Aflat1',
+          'Ab1',
           'G2',
         ],
       },
       {
         intervalId: 12,
         notes: [
-          'Aflat2',
+          'Ab2',
           'A1',
         ],
       },
       {
         intervalId: 12,
         notes: [
-          'Bflat1',
+          'Bb1',
           'A2',
         ],
       },
       {
         intervalId: 12,
         notes: [
-          'Bflat2',
+          'Bb2',
           'B1',
         ],
       },
@@ -2142,71 +2142,71 @@ export const getTunesData = () => (
       {
         intervalId: 13,
         notes: [
-          'Dflat1',
-          'Dflat2',
+          'Db1',
+          'Db2',
         ],
       },
       {
         intervalId: 13,
         notes: [
-          'Dflat2',
-          'Dflat1',
+          'Db2',
+          'Db1',
         ],
       },
       {
         intervalId: 13,
         notes: [
-          'Eflat1',
-          'Eflat2',
+          'Eb1',
+          'Eb2',
         ],
       },
       {
         intervalId: 13,
         notes: [
-          'Eflat2',
-          'Eflat1',
+          'Eb2',
+          'Eb1',
         ],
       },
       {
         intervalId: 13,
         notes: [
-          'Gflat1',
-          'Gflat2',
+          'Gb1',
+          'Gb2',
         ],
       },
       {
         intervalId: 13,
         notes: [
-          'Gflat2',
-          'Gflat1',
+          'Gb2',
+          'Gb1',
         ],
       },
       {
         intervalId: 13,
         notes: [
-          'Aflat1',
-          'Aflat2',
+          'Ab1',
+          'Ab2',
         ],
       },
       {
         intervalId: 13,
         notes: [
-          'Aflat2',
-          'Aflat1',
+          'Ab2',
+          'Ab1',
         ],
       },
       {
         intervalId: 13,
         notes: [
-          'Bflat1',
-          'Bflat2',
+          'Bb1',
+          'Bb2',
         ],
       },
       {
         intervalId: 13,
         notes: [
-          'Bflat2',
-          'Bflat1',
+          'Bb2',
+          'Bb1',
         ],
       },
     ],

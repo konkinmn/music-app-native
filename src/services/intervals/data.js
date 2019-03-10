@@ -1,5 +1,5 @@
 export const getIntervalsData = () => ([
-  { id: 1, name: 'Прима' },
+  // { id: 1, name: 'Прима' },
   { id: 2, name: 'Секунда малая' },
   { id: 3, name: 'Секунда большая' },
   { id: 4, name: 'Терция малая' },
