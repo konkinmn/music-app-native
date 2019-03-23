@@ -11,18 +11,28 @@ class App extends Component {
     initApp: PropTypes.func.isRequired,
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     this.props.initApp();
   }
 
   render() {
+    console.log(this.props.loaded);
+    if (!this.props.loaded) {
+      return null;
+    }
     return (
       <Lesson />
     );
   }
 }
+
+const mapStateToProps = ({ appService }) => ({
+  loaded: appService.loaded,
+});
+
+
 const mapDispatchToProps = {
   initApp,
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,4 +1,5 @@
-import {takeEvery, all, take, put} from 'redux-saga/effects';
+import { takeEvery, all, take, put } from 'redux-saga/effects';
+import { Font } from 'expo';
 
 import {
   appLoaded,
@@ -20,6 +21,10 @@ import {
   actionTypes as lessonActions,
 } from '../lesson/actions';
 
+const fonts = {
+  LogoFont: require('../../../assets/fonts/logo-font.ttf'),
+};
+
 function* initApp() {
   try {
     yield put(getIntervals());
@@ -29,6 +34,8 @@ function* initApp() {
       take(tuneTypesActions.GET_INTERVALS_SUCCESS),
       take(tunesActions.GET_TUNES_SUCCESS),
     ]);
+
+    yield Font.loadAsync(fonts);
 
     yield put(initLesson());
 
