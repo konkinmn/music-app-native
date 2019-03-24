@@ -16,7 +16,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.loaded);
     if (!this.props.loaded) {
       return null;
     }

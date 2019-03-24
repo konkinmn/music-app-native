@@ -12,6 +12,11 @@ const findIntervalButtonColor = (answer) => {
   return '#4CD964';
 };
 
+export const LessonContainer = styled.View`
+  flex: 1;
+  justify-content: flex-end;
+`;
+
 export const HeaderContainer = styled.View`
   margin-top: 40px;
   display: flex;
@@ -31,6 +36,7 @@ export const PianoContainer = styled.View`
 export const IntervalsContainer = styled.View`
   margin-top: 25px;
   padding: 0 10px;
+  flex-grow: 1212;
 `;
 
 export const IntervalRow = styled.View`
@@ -71,11 +77,33 @@ export const ButtonWrapper = styled.TouchableOpacity`
   background: #FFFFFF;
   border: 1px solid #CCCCCC;
   border-radius: 8px;
-  padding: 15px;
+  height: 45px;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const ButtonText = styled.Text`
   font-size: 17px;
   color: #000000;
   letter-spacing: -0.42px;
+`;
+
+
+export const ButtonDesc = styled.Text`
+  font-size: 13px;
+  color: #ACACB3;
+  letter-spacing: -0.32px;
+  text-align: right;
+`;
+
+export const OptionsContainer = styled.View`
+  height: 50px;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;

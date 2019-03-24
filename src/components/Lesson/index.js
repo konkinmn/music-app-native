@@ -6,14 +6,21 @@ import {
 } from 'react-native';
 
 import Logo from '../Logo';
-import Gear from '../Gear';
 import Indicator from '../Indicator';
 import PianoKeyBoard from '../PianoKeyBoard';
 
+import Gear from '../icons/Gear';
+import PlayUp from '../icons/PlayUp';
+import Play from '../icons/Play';
+import Info from '../icons/Info';
+
+
 import {
+  LessonContainer,
   IntervalsContainer,
   ButtonWrapper,
   ButtonText,
+  ButtonDesc,
   CompletedLessonContainer,
   HeaderContainer,
   PianoContainer,
@@ -21,6 +28,7 @@ import {
   QuestionText,
   QuestionDesc,
   IntervalRow,
+  OptionsContainer,
 } from './styles';
 
 import {
@@ -71,7 +79,7 @@ class App extends Component {
       <IntervalsContainer>
         {formattedIntervals.map((intervals, i) => (
           <IntervalRow key={i}>
-            {intervals.map(({ id, name }) => {
+            {intervals.map(({ id, name, number }) => {
               let concatName = name[0];
 
               if (name[1]) {
@@ -83,9 +91,9 @@ class App extends Component {
                   key={id}
                   answer={this.getAnswer(id)}
                   onPress={() => this.handlePressInterval(id)}
-                  title={concatName}
                 >
-                  <ButtonText>{name}</ButtonText>
+                  <ButtonText>{concatName}</ButtonText>
+                  <ButtonDesc>{number}</ButtonDesc>
                 </ButtonWrapper>
               );
             })}
@@ -95,20 +103,24 @@ class App extends Component {
     );
   };
 
+  onPressPlay = () => {
+    if (!this.props.isPlaying) {
+      this.props.playTune();
+    }
+  };
+
   renderOptions = () => {
     const {
-      activeTune, isPlaying, playTune, getActiveTune,
+      activeTune, isPlaying, getActiveTune,
     } = this.props;
 
-    if (isPlaying) {
-      return null;
-    }
-
-    if (activeTune.answerId === null) {
-      return <Button onPress={playTune} title="Play" />;
-    }
-
-    return <Button onPress={getActiveTune} title="Next" />;
+    return (
+      <OptionsContainer>
+        <PlayUp />
+        <Play isPlaying={isPlaying} onPress={this.onPressPlay} />
+        <Info />
+      </OptionsContainer>
+    );
   };
 
   renderHeader = () => (
@@ -152,11 +164,11 @@ class App extends Component {
       return (
         <CompletedLessonContainer>
           <Text>
-Правильно:
+            Правильно:
             {answers.correct}
           </Text>
           <Text>
-Не правильно:
+            Не правильно:
             {answers.wrong}
           </Text>
           <Button onPress={initLesson} title="Еще раз" />
@@ -165,14 +177,13 @@ class App extends Component {
     }
 
     return (
-      <View>
+      <LessonContainer>
         {this.renderHeader()}
         {this.renderPiano()}
         {this.renderQuestion()}
         {this.renderIntervals()}
-        {/* {this.renderOptions()} */}
-        {/* {this.renderPicker()} */}
-      </View>
+        {this.renderOptions()}
+      </LessonContainer>
     );
   }
 }
