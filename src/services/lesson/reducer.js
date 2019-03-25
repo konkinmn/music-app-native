@@ -4,7 +4,6 @@ import { playbackTypes } from './constants';
 export const initialState = {
   activeTune: {},
   tunes: [],
-  userAnswer: null,
   isPlaying: false,
   answers: {
     correct: 0,
@@ -84,6 +83,10 @@ const handlePlayTune = (state, action) => ({
 const handleFinishPlayTune = (state, action) => ({
   ...state,
   isPlaying: false,
+  activeTune: {
+    ...state.activeTune,
+    secondPlay: true,
+  },
 });
 
 const handleSetFinishLesson = (state, action) => ({

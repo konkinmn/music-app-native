@@ -13,6 +13,8 @@ import Gear from '../icons/Gear';
 import PlayUp from '../icons/PlayUp';
 import Play from '../icons/Play';
 import Info from '../icons/Info';
+import ArrowForward from '../icons/ArrowForward';
+import Repeat from '../icons/Repeat';
 
 
 import {
@@ -29,6 +31,7 @@ import {
   QuestionDesc,
   IntervalRow,
   OptionsContainer,
+  IconsTouchWrapper,
 } from './styles';
 
 import {
@@ -66,7 +69,7 @@ class App extends Component {
   };
 
   handlePressInterval = (id) => {
-    const { answerId, intervalId } = this.props.activeTune;
+    const { answerId } = this.props.activeTune;
     if (!answerId) {
       this.props.checkAnswer(id);
     }
@@ -81,6 +84,7 @@ class App extends Component {
           <IntervalRow key={i}>
             {intervals.map(({ id, name, number }) => {
               let concatName = name[0];
+              const answer = this.getAnswer(id);
 
               if (name[1]) {
                 concatName = `${concatName} ${name[1][0]}.`;
@@ -89,11 +93,11 @@ class App extends Component {
               return (
                 <ButtonWrapper
                   key={id}
-                  answer={this.getAnswer(id)}
+                  answer={answer}
                   onPress={() => this.handlePressInterval(id)}
                 >
-                  <ButtonText>{concatName}</ButtonText>
-                  <ButtonDesc>{number}</ButtonDesc>
+                  <ButtonText answer={answer}>{concatName}</ButtonText>
+                  <ButtonDesc answer={answer}>{number}</ButtonDesc>
                 </ButtonWrapper>
               );
             })}
@@ -109,19 +113,42 @@ class App extends Component {
     }
   };
 
-  renderOptions = () => {
+  renderMainIcon = () => {
     const {
       activeTune, isPlaying, getActiveTune,
     } = this.props;
 
+    if (activeTune.answerId) {
+      return (
+        <IconsTouchWrapper onPress={getActiveTune}>
+          <ArrowForward />
+        </IconsTouchWrapper>
+      );
+    }
+
+    if (activeTune.secondPlay) {
+      return (
+        <IconsTouchWrapper onPress={this.onPressPlay}>
+          <Repeat isPlaying={isPlaying} />
+        </IconsTouchWrapper>
+      );
+    }
+
     return (
-      <OptionsContainer>
-        <PlayUp />
-        <Play isPlaying={isPlaying} onPress={this.onPressPlay} />
-        <Info />
-      </OptionsContainer>
+      <IconsTouchWrapper onPress={this.onPressPlay}>
+        <Play isPlaying={isPlaying} />
+      </IconsTouchWrapper>
     );
   };
+
+
+  renderOptions = () => (
+    <OptionsContainer>
+      <PlayUp />
+      {this.renderMainIcon()}
+      <Info />
+    </OptionsContainer>
+  );
 
   renderHeader = () => (
     <HeaderContainer>
@@ -131,18 +158,58 @@ class App extends Component {
     </HeaderContainer>
   );
 
-  renderPiano = () => (
-    <PianoContainer>
-      <PianoKeyBoard />
-    </PianoContainer>
-  );
+  renderPiano = () => {
+    const { answerId, notes } = this.props.activeTune;
+    let currentNotes = [];
 
-  renderQuestion = () => (
-    <QuestionContainer>
-      <QuestionText>Определи интервал</QuestionText>
-      <QuestionDesc>Прослушай и выбери правильный ответ</QuestionDesc>
-    </QuestionContainer>
-  );
+    if (answerId) {
+      currentNotes = notes;
+    }
+
+    return (
+      <PianoContainer>
+        <PianoKeyBoard notes={currentNotes} />
+      </PianoContainer>
+    );
+  };
+
+  renderQuestion = () => {
+    const { answerId, intervalId } = this.props.activeTune;
+
+    if (!answerId) {
+      return (
+        <QuestionContainer>
+          <QuestionText>Определи интервал</QuestionText>
+          <QuestionDesc>Прослушай и выбери правильный ответ</QuestionDesc>
+        </QuestionContainer>
+      );
+    }
+
+    const { name } = this.props.intervals.find(({ id }) => id === intervalId);
+    let secondPart = '';
+
+    if (name[1]) {
+      secondPart = `${name[1]} `;
+    }
+
+    const intervalName = `${secondPart}${name[0].toLowerCase()}`;
+
+    if (intervalId !== answerId) {
+      return (
+        <QuestionContainer>
+          <QuestionText>{`Нет, это ${intervalName}!`}</QuestionText>
+          <QuestionDesc>Как запомнить?</QuestionDesc>
+        </QuestionContainer>
+      );
+    }
+
+    return (
+      <QuestionContainer>
+        <QuestionText>{`Да, это ${intervalName}!`}</QuestionText>
+        <QuestionDesc>Попробуем еще?</QuestionDesc>
+      </QuestionContainer>
+    );
+  };
 
   renderPicker = () => (
     <Picker

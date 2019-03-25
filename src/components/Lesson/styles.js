@@ -6,10 +6,22 @@ const findIntervalButtonColor = (answer) => {
   }
 
   if (!answer) {
-    return '#FF3B30';
+    return '#ff3b30';
   }
 
-  return '#4CD964';
+  return '#01e677';
+};
+
+const findIntervalButtonBorderColor = (answer) => {
+  if (answer === null) {
+    return '#CCCCCC';
+  }
+
+  if (!answer) {
+    return '#ff3b30';
+  }
+
+  return '#01e677';
 };
 
 export const LessonContainer = styled.View`
@@ -18,7 +30,6 @@ export const LessonContainer = styled.View`
 `;
 
 export const HeaderContainer = styled.View`
-  margin-top: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -64,6 +75,7 @@ export const QuestionText = styled.Text`
   text-align: center;
   line-height: 34px;
 `;
+
 export const QuestionDesc = styled.Text`
   font-size: 14px;
   color: #ADADB3;
@@ -74,8 +86,8 @@ export const QuestionDesc = styled.Text`
 
 export const ButtonWrapper = styled.TouchableOpacity`
   width: 49%;
-  background: #FFFFFF;
-  border: 1px solid #CCCCCC;
+  background: ${({ answer }) => `${findIntervalButtonColor(answer)}`};
+  border: 1px solid ${({ answer }) => `${findIntervalButtonBorderColor(answer)}`};
   border-radius: 8px;
   height: 45px;
   padding: 0 15px;
@@ -85,16 +97,25 @@ export const ButtonWrapper = styled.TouchableOpacity`
   align-items: center;
 `;
 
+export const IconsTouchWrapper = styled.TouchableOpacity`
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const ButtonText = styled.Text`
   font-size: 17px;
-  color: #000000;
+  color: ${({ answer }) => (answer === null ? '#000' : '#fff')};
   letter-spacing: -0.42px;
 `;
 
 
 export const ButtonDesc = styled.Text`
   font-size: 13px;
-  color: #ACACB3;
+  color: ${({ answer }) => (answer === null ? '#ACACB3' : '#fff')};
   letter-spacing: -0.32px;
   text-align: right;
 `;

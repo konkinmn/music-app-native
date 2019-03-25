@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { SafeAreaView } from 'react-native';
+
 import Lesson from './components/Lesson';
 
 import { initApp } from './services/app/actions';
@@ -20,7 +22,9 @@ class App extends Component {
       return null;
     }
     return (
-      <Lesson />
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+        <Lesson />
+      </SafeAreaView>
     );
   }
 }
