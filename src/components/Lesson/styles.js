@@ -65,7 +65,7 @@ export const CompletedLessonContainer = styled.View`
 `;
 
 export const QuestionContainer = styled.View`
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 
 export const QuestionText = styled.Text`
@@ -127,4 +127,56 @@ export const OptionsContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const LeftHandImage = styled.Image`
+  margin-top: 10px;
+  transform: translateX(103px);
+  z-index: 1;
+  ${({ active }) => active && 'transform: translateX(-20px);'}
+`;
+
+export const RightHandImage = styled.Image`
+  margin-top: 10px;
+  transform: translateX(-103px);
+  z-index: 1;
+  ${({ active }) => active && 'transform: translateX(20px);'}
+`;
+
+export const ButtonSuccessWrapper = styled.TouchableOpacity`
+  padding: 16px 20px;
+  background: #01E677;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  border-radius: 8px;
+`;
+
+export const ButtonSuccessText = styled.Text`
+  font-size: 17px;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 22px;
+`;
+
+export const SuccessText = styled.Text`
+  font-weight: 600;
+  font-size: 24px;
+  color: #000000;
+  letter-spacing: 0.29px;
+  text-align: center;
+  line-height: 34px;
+  margin-bottom: 20px;
+`;
+
+export const SuccessDesc = styled.Text`
+  font-size: 16px;
+  color: #8E8E93;
+  letter-spacing: -0.38px;
+  text-align: center;
+  line-height: 24px;
+  margin-bottom: 30px;
+  width: 290px;
 `;

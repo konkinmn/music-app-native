@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  View, Button, Picker, Text,
+  Button, Picker, Text,
 } from 'react-native';
 
 import Logo from '../Logo';
@@ -32,6 +32,12 @@ import {
   IntervalRow,
   OptionsContainer,
   IconsTouchWrapper,
+  LeftHandImage,
+  RightHandImage,
+  ButtonSuccessWrapper,
+  ButtonSuccessText,
+  SuccessText,
+  SuccessDesc,
 } from './styles';
 
 import {
@@ -168,7 +174,15 @@ class App extends Component {
 
     return (
       <PianoContainer>
+        <LeftHandImage
+          active={!!answerId}
+          source={require('../../../assets/images/left-hand.png')}
+        />
         <PianoKeyBoard notes={currentNotes} />
+        <RightHandImage
+          active={!!answerId}
+          source={require('../../../assets/images/right-hand.png')}
+        />
       </PianoContainer>
     );
   };
@@ -224,21 +238,20 @@ class App extends Component {
 
   render() {
     const {
-      intervals, finishLesson, answers, initLesson,
+      finishLesson, initLesson,
     } = this.props;
 
     if (finishLesson) {
       return (
         <CompletedLessonContainer>
-          <Text>
-            Правильно:
-            {answers.correct}
-          </Text>
-          <Text>
-            Не правильно:
-            {answers.wrong}
-          </Text>
-          <Button onPress={initLesson} title="Еще раз" />
+          <SuccessText>Ура! Урок пройден!</SuccessText>
+          <SuccessDesc>
+            Поздравляем! Вы сделали шаг на пути
+            к идеальному слуху!
+          </SuccessDesc>
+          <ButtonSuccessWrapper onPress={initLesson}>
+            <ButtonSuccessText>Тренироваться дальше</ButtonSuccessText>
+          </ButtonSuccessWrapper>
         </CompletedLessonContainer>
       );
     }

@@ -26,7 +26,11 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "schedule": "^0.4.0"
+    "schedule": "^0.4.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-react-native-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.5.2",
+    "stylelint-react-native": "^2.0.2"
   },
   "private": true
 }
