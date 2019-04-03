@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-  Button, Picker, Text,
-} from 'react-native';
 
 import Logo from '../Logo';
 import Indicator from '../Indicator';
-import PianoKeyBoard from '../PianoKeyBoard';
+
+import BoardAndHand from '../BoardAndHand';
 
 import Gear from '../icons/Gear';
 import PlayUp from '../icons/PlayUp';
@@ -25,15 +23,12 @@ import {
   ButtonDesc,
   CompletedLessonContainer,
   HeaderContainer,
-  PianoContainer,
   QuestionContainer,
   QuestionText,
   QuestionDesc,
   IntervalRow,
   OptionsContainer,
   IconsTouchWrapper,
-  LeftHandImage,
-  RightHandImage,
   ButtonSuccessWrapper,
   ButtonSuccessText,
   SuccessText,
@@ -43,6 +38,7 @@ import {
 import {
   checkAnswer, getActiveTune, playTune, updateSettings, initLesson,
 } from '../../services/lesson/actions';
+
 import { playbackTypes } from '../../services/lesson/constants';
 
 const oddArrayReducer = (acc, item, i) => {
@@ -62,8 +58,9 @@ const oddArrayReducer = (acc, item, i) => {
   return acc;
 };
 
-class App extends Component {
-  static propTypes = {};
+class Lesson extends Component {
+  static propTypes = {
+  };
 
   getAnswer = (renderedIntervalId) => {
     const { answerId, intervalId } = this.props.activeTune;
@@ -75,8 +72,8 @@ class App extends Component {
   };
 
   handlePressInterval = (id) => {
-    const { answerId } = this.props.activeTune;
-    if (!answerId) {
+    const { answerId, secondPlay } = this.props.activeTune;
+    if (secondPlay && !answerId) {
       this.props.checkAnswer(id);
     }
   };
@@ -164,29 +161,6 @@ class App extends Component {
     </HeaderContainer>
   );
 
-  renderPiano = () => {
-    const { answerId, notes } = this.props.activeTune;
-    let currentNotes = [];
-
-    if (answerId) {
-      currentNotes = notes;
-    }
-
-    return (
-      <PianoContainer>
-        <LeftHandImage
-          active={!!answerId}
-          source={require('../../../assets/images/left-hand.png')}
-        />
-        <PianoKeyBoard notes={currentNotes} />
-        <RightHandImage
-          active={!!answerId}
-          source={require('../../../assets/images/right-hand.png')}
-        />
-      </PianoContainer>
-    );
-  };
-
   renderQuestion = () => {
     const { answerId, intervalId } = this.props.activeTune;
 
@@ -225,17 +199,6 @@ class App extends Component {
     );
   };
 
-  renderPicker = () => (
-    <Picker
-      selectedValue={this.props.playback}
-      style={{ height: 50, width: '100%' }}
-      onValueChange={itemValue => this.props.updateSettings({ playback: itemValue })}
-    >
-      <Picker.Item value={playbackTypes.UP} label="Вверх" />
-      <Picker.Item value={playbackTypes.DOWN} label="Вниз" />
-    </Picker>
-  );
-
   render() {
     const {
       finishLesson, initLesson,
@@ -259,7 +222,7 @@ class App extends Component {
     return (
       <LessonContainer>
         {this.renderHeader()}
-        {this.renderPiano()}
+        <BoardAndHand />
         {this.renderQuestion()}
         {this.renderIntervals()}
         {this.renderOptions()}
@@ -285,4 +248,4 @@ const mapDispatchToProps = {
   initLesson,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Lesson);

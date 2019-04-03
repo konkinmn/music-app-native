@@ -1,23 +1,27 @@
-import React from 'react';
-import { Svg } from 'expo';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { View } from 'react-native';
 
-const Indicator = props => (
-  <Svg width={32} height={32} {...props}>
-    <Svg.G
-      transform="translate(1 .901)"
-      strokeWidth={2}
-      fill="none"
-      fillRule="evenodd"
-    >
-      <Svg.Circle stroke="#EDEDF2" fill="#FFF" cx={15} cy={15.099} r={15} />
-      <Svg.Path
-        d="M26.007 4.908A14.96 14.96 0 0 0 15 .098"
-        stroke="#000"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </Svg.G>
-  </Svg>
-);
+import PercentageCircle from 'react-native-percentage-circle';
 
-export default Indicator;
+class Indicator extends Component {
+  static propTypes = {
+    defaultLength: PropTypes.number.isRequired,
+    remainingTunesLength: PropTypes.number.isRequired,
+  };
+
+  render() {
+    const { defaultLength, remainingTunesLength } = this.props;
+    const answersCount = defaultLength - remainingTunesLength;
+    const percent = answersCount * 100 / defaultLength;
+    return <PercentageCircle radius={15} percent={percent} color="#000" bgcolor="#EDEDF2"><View /></PercentageCircle>;
+  }
+}
+
+const mapStateToProps = ({ lessonService }) => ({
+  defaultLength: lessonService.length,
+  remainingTunesLength: lessonService.tunes.length,
+});
+
+export default connect(mapStateToProps)(Indicator);

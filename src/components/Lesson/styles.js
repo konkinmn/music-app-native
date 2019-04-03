@@ -37,13 +37,6 @@ export const HeaderContainer = styled.View`
   padding: 0 15px;
 `;
 
-export const PianoContainer = styled.View`
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
-
 export const IntervalsContainer = styled.View`
   margin-top: 25px;
   padding: 0 10px;
@@ -127,20 +120,6 @@ export const OptionsContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`;
-
-export const LeftHandImage = styled.Image`
-  margin-top: 10px;
-  transform: translateX(103px);
-  z-index: 1;
-  ${({ active }) => active && 'transform: translateX(-20px);'}
-`;
-
-export const RightHandImage = styled.Image`
-  margin-top: 10px;
-  transform: translateX(-103px);
-  z-index: 1;
-  ${({ active }) => active && 'transform: translateX(20px);'}
 `;
 
 export const ButtonSuccessWrapper = styled.TouchableOpacity`
