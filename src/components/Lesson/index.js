@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Switch } from 'react-native';
 
 import Logo from '../Logo';
 import Indicator from '../Indicator';
 
 import BoardAndHand from '../BoardAndHand';
+import HelpModal from '../HelpModal';
 
 import Gear from '../icons/Gear';
 import PlayUp from '../icons/PlayUp';
 import Play from '../icons/Play';
-import Info from '../icons/Info';
+import Tip from '../icons/Tip';
 import ArrowForward from '../icons/ArrowForward';
 import Repeat from '../icons/Repeat';
-
+import LeftArrow from '../icons/LeftArrow';
 
 import {
   LessonContainer,
@@ -33,13 +35,23 @@ import {
   ButtonSuccessText,
   SuccessText,
   SuccessDesc,
+  SettingsContainer,
+  IntervalSettingsContainer,
+  IntervalSettingsText,
 } from './styles';
 
 import {
-  checkAnswer, getActiveTune, playTune, updateSettings, initLesson,
+  checkAnswer,
+  getActiveTune,
+  playTune,
+  setHideSettings,
+  initLesson,
+  setShowSettings,
+  updateSettings,
+  changeHelpModal,
 } from '../../services/lesson/actions';
 
-import { playbackTypes } from '../../services/lesson/constants';
+import { helpModalTypes } from '../../services/lesson/constants';
 
 const oddArrayReducer = (acc, item, i) => {
   if (!acc.length) {
@@ -59,8 +71,7 @@ const oddArrayReducer = (acc, item, i) => {
 };
 
 class Lesson extends Component {
-  static propTypes = {
-  };
+  static propTypes = {};
 
   getAnswer = (renderedIntervalId) => {
     const { answerId, intervalId } = this.props.activeTune;
@@ -149,13 +160,17 @@ class Lesson extends Component {
     <OptionsContainer>
       <PlayUp />
       {this.renderMainIcon()}
-      <Info />
+      <IconsTouchWrapper onPress={() => this.props.changeHelpModal(helpModalTypes.TIP)}>
+        <Tip />
+      </IconsTouchWrapper>
     </OptionsContainer>
   );
 
   renderHeader = () => (
     <HeaderContainer>
-      <Gear />
+      <IconsTouchWrapper size={30} onPress={this.props.setShowSettings}>
+        <Gear />
+      </IconsTouchWrapper>
       <Logo />
       <Indicator />
     </HeaderContainer>
@@ -186,7 +201,11 @@ class Lesson extends Component {
       return (
         <QuestionContainer>
           <QuestionText>{`Нет, это ${intervalName}!`}</QuestionText>
-          <QuestionDesc>Как запомнить?</QuestionDesc>
+          <QuestionDesc
+            onPress={() => this.props.changeHelpModal(helpModalTypes.HOW_TO_REMEMBER)}
+          >
+            Как запомнить?
+          </QuestionDesc>
         </QuestionContainer>
       );
     }
@@ -199,24 +218,82 @@ class Lesson extends Component {
     );
   };
 
+  renderFinishedLesson = initLesson => (
+    <CompletedLessonContainer>
+      <SuccessText>Ура! Урок пройден!</SuccessText>
+      <SuccessDesc>
+        Поздравляем! Вы сделали шаг на пути
+        к идеальному слуху!
+      </SuccessDesc>
+      <ButtonSuccessWrapper onPress={initLesson}>
+        <ButtonSuccessText>Тренироваться дальше</ButtonSuccessText>
+      </ButtonSuccessWrapper>
+    </CompletedLessonContainer>
+  );
+
+  renderIntervalsList = () => this.props.intervalsList.map(interval => (
+    <IntervalSettingsContainer key={interval.id}>
+      <IntervalSettingsText>{`${interval.name[0]} ${interval.name[1] ? interval.name[1] : ''}`}</IntervalSettingsText>
+      <Switch
+        onValueChange={value => this.changeSettings(interval, value)}
+        value={this.getSettingsValue(interval.id)}
+      />
+    </IntervalSettingsContainer>
+  ));
+
+  getSettingsValue = id => this.props.intervals.some(interval => interval.id === id);
+
+  reInitLesson = false;
+
+  changeSettings = (interval, value) => {
+    let newIntervals = [];
+
+    if (!value) {
+      if (this.props.intervals.length === 2) {
+        return;
+      }
+
+      newIntervals = this.props.intervals.filter(({ id }) => id !== interval.id);
+    } else {
+      newIntervals = [
+        ...this.props.intervals,
+        interval,
+      ];
+    }
+
+    this.reInitLesson = true;
+    newIntervals.sort((a, b) => a.id - b.id);
+    this.props.updateSettings({ intervals: newIntervals });
+  };
+
+  returnToLesson = () => {
+    if (this.reInitLesson) {
+      this.props.initLesson();
+      this.reInitLesson = false;
+    }
+    this.props.setHideSettings();
+  };
+
+  renderSettings = () => (
+    <SettingsContainer>
+      <IconsTouchWrapper size={30} onPress={this.returnToLesson}>
+        <LeftArrow />
+      </IconsTouchWrapper>
+      {this.renderIntervalsList()}
+    </SettingsContainer>
+  );
+
   render() {
     const {
-      finishLesson, initLesson,
+      finishLesson, initLesson, showSettings,
     } = this.props;
 
+    if (showSettings) {
+      return this.renderSettings();
+    }
+
     if (finishLesson) {
-      return (
-        <CompletedLessonContainer>
-          <SuccessText>Ура! Урок пройден!</SuccessText>
-          <SuccessDesc>
-            Поздравляем! Вы сделали шаг на пути
-            к идеальному слуху!
-          </SuccessDesc>
-          <ButtonSuccessWrapper onPress={initLesson}>
-            <ButtonSuccessText>Тренироваться дальше</ButtonSuccessText>
-          </ButtonSuccessWrapper>
-        </CompletedLessonContainer>
-      );
+      return this.renderFinishedLesson(initLesson);
     }
 
     return (
@@ -226,26 +303,32 @@ class Lesson extends Component {
         {this.renderQuestion()}
         {this.renderIntervals()}
         {this.renderOptions()}
+        <HelpModal />
       </LessonContainer>
     );
   }
 }
 
-const mapStateToProps = ({ lessonService }) => ({
+const mapStateToProps = ({ lessonService, intervalsService }) => ({
   activeTune: lessonService.activeTune,
   intervals: lessonService.settings.intervals,
   answers: lessonService.answers,
   isPlaying: lessonService.isPlaying,
   finishLesson: lessonService.finishLesson,
   playback: lessonService.settings.playback,
+  showSettings: lessonService.showSettings,
+  intervalsList: intervalsService.intervals,
 });
 
 const mapDispatchToProps = {
   checkAnswer,
   getActiveTune,
   playTune,
-  updateSettings,
+  setShowSettings,
+  setHideSettings,
   initLesson,
+  updateSettings,
+  changeHelpModal,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Lesson);

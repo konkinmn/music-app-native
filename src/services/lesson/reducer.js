@@ -16,6 +16,8 @@ export const initialState = {
   },
   length: 10,
   finishLesson: false,
+  showSettings: false,
+  helpModal: null,
 };
 
 const handleUpdateSettings = (state, action) => ({
@@ -106,6 +108,21 @@ const handleClearAnswer = (state, action) => ({
   },
 });
 
+const handleShowSettings = (state, action) => ({
+  ...state,
+  showSettings: true,
+});
+
+const handleHideSettings = (state, action) => ({
+  ...state,
+  showSettings: false,
+});
+
+const handleChangeHelpModal = (state, action) => ({
+  ...state,
+  helpModal: action.helpModal,
+});
+
 export default (state = initialState, action) => {
   const handlers = {
     [actionTypes.UPDATE_SETTINGS]: handleUpdateSettings,
@@ -119,6 +136,9 @@ export default (state = initialState, action) => {
     [actionTypes.UPDATE_ACTIVE_TUNE]: handleUpdateActiveTune,
     [actionTypes.SET_FINISH_LESSON]: handleSetFinishLesson,
     [actionTypes.CLEAR_FINISH_LESSON]: handleClearFinishLesson,
+    [actionTypes.SHOW_SETTINGS]: handleShowSettings,
+    [actionTypes.HIDE_SETTINGS]: handleHideSettings,
+    [actionTypes.CHANGE_HELP_MODAL]: handleChangeHelpModal,
   };
   return handlers[action.type]
     ? handlers[action.type](state, action)

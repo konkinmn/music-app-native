@@ -91,8 +91,13 @@ export const ButtonWrapper = styled.TouchableOpacity`
 `;
 
 export const IconsTouchWrapper = styled.TouchableOpacity`
-  width: 50px;
-  height: 50px;
+  ${({ size }) => (size ? `
+    width: ${size}px;
+    height: ${size}px;
+  ` : `
+    width: 50px;
+    height: 50px;
+  `)};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -158,4 +163,26 @@ export const SuccessDesc = styled.Text`
   line-height: 24px;
   margin-bottom: 30px;
   width: 290px;
+`;
+
+export const SettingsContainer = styled.View`
+  flex: 1;
+  padding: 15px 15px 0 10px;
+`;
+
+export const IntervalSettingsContainer = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  border-bottom-width: 1px;
+  border-bottom-color: #E0E0E0;
+`;
+
+export const IntervalSettingsText = styled.Text`
+  font-size: 17px;
+  color: #000000;
+  letter-spacing: -0.41px;
+  line-height: 22px;
 `;

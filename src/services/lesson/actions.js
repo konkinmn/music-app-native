@@ -15,6 +15,9 @@ export const actionTypes = {
   FINISH_PLAY_TUNE: 'FINISH_PLAY_TUNE',
   SET_FINISH_LESSON: 'SET_FINISH_LESSON',
   CLEAR_FINISH_LESSON: 'CLEAR_FINISH_LESSON',
+  SHOW_SETTINGS: 'SHOW_SETTINGS',
+  HIDE_SETTINGS: 'HIDE_SETTINGS',
+  CHANGE_HELP_MODAL: 'CHANGE_HELP_MODAL',
 };
 
 export const initLesson = () => ({ type: actionTypes.INIT_LESSON });
@@ -51,3 +54,8 @@ export const setFinishLesson = () => ({ type: actionTypes.SET_FINISH_LESSON });
 
 export const clearFinishLesson = () => ({ type: actionTypes.CLEAR_FINISH_LESSON });
 
+export const setShowSettings = () => ({ type: actionTypes.SHOW_SETTINGS });
+
+export const setHideSettings = () => ({ type: actionTypes.HIDE_SETTINGS });
+
+export const changeHelpModal = helpModal => ({ type: actionTypes.CHANGE_HELP_MODAL, helpModal });

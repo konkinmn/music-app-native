@@ -1,4 +1,6 @@
-import { takeEvery, all, take, put } from 'redux-saga/effects';
+import {
+  takeEvery, all, take, put, select,
+} from 'redux-saga/effects';
 import { Font } from 'expo';
 
 import {
@@ -18,7 +20,7 @@ import {
 
 import {
   initLesson,
-  actionTypes as lessonActions,
+  actionTypes as lessonActions, updateSettings,
 } from '../lesson/actions';
 
 const fonts = {
@@ -36,6 +38,9 @@ function* initApp() {
     ]);
 
     yield Font.loadAsync(fonts);
+
+    const intervals = yield select(({ intervalsService }) => intervalsService.intervals);
+    yield put(updateSettings({ intervals }));
 
     yield put(initLesson());
 

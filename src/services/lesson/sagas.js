@@ -1,4 +1,6 @@
-import { takeEvery, all, take, put, select, call } from 'redux-saga/effects';
+import {
+  takeEvery, all, take, put, select, call,
+} from 'redux-saga/effects';
 import shuffle from 'lodash.shuffle';
 
 import {
@@ -37,10 +39,8 @@ const getTunes = (intervalsIds, length, tunes, lessonTunes) => {
 
 function* initLessonSaga() {
   try {
-    const intervals = yield select(({ intervalsService }) => intervalsService.intervals);
     yield put(clearAnswers());
     yield put(clearFinishLesson());
-    yield put(updateSettings({ intervals }));
     yield put(getLessonTunes());
     yield put(getActiveTune());
 
